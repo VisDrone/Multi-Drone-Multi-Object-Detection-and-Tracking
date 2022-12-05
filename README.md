@@ -26,9 +26,11 @@ MDMT-FULL(25.8G): [Baidu Netdisk](https://pan.baidu.com/s/1Zkp9jrGSHxATFstUAkhs-
 
 ## Multi-matching Identity Authentication network (MIA-Net)
 
-
+MIA-Net (code)
 
 
 ## Citation 
+Please cite this paper if you want to use it in your work.
+
 
 
