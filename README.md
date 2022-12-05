@@ -9,8 +9,7 @@ To address the critical challenges of identity association and target occlusion 
 The MDMT dataset comprises 2,204,620 bounding boxes, of which \textcolor{red}{543,444} bounding boxes contain target occlusions. 
 We also design a multi-device target association score (MDA) as the evaluation criteria for the ability of cross-view target association in multi-device tracking.
 Furthermore, we propose a Multi-matching Identity Authentication network (MIA-Net) for the multi-drone multi-target tracking task.
-The local-global matching algorithm in MIA-Net discovers the topological relationship of targets across drones, efficiently solves the problem of cross-drone association, and also effectively complements occluded targets with the advantage of multiple drone view mapping.  
-Extensive experiments on the MDMT dataset validate the effectiveness of our proposed MIA-Net for the task of identity association and multi-object tracking with occlusions.
+The local-global matching algorithm in MIA-Net discovers the topological relationship of targets across drones, efficiently solves the problem of cross-drone association, and also effectively complements occluded targets with the advantage of multiple drone view mapping. Extensive experiments on the MDMT dataset validate the effectiveness of our proposed MIA-Net for the task of identity association and multi-object tracking with occlusions.
 
 
 ## Dataset
