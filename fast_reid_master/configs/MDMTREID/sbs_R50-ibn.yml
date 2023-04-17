@@ -1,0 +1,12 @@
+_BASE_: ../Base-SBS.yml
+
+MODEL:
+  BACKBONE:
+    WITH_IBN: True
+  # WEIGHTS: /home/linkdata/data/tmm/fast-reid-master/logs/mdmtreid/sbs_R50-ibn/past/model_best.pth
+
+DATASETS:
+  NAMES: ("MDMTREID",)
+  TESTS: ("MDMTREID",)
+
+OUTPUT_DIR: logs/mdmtreid/sbs_R50-ibn

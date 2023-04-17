@@ -1,0 +1,191 @@
+CUDNN_BENCHMARK: true
+DATALOADER:
+  NUM_INSTANCE: 16
+  NUM_WORKERS: 8
+  SAMPLER_TRAIN: NaiveIdentitySampler
+  SET_WEIGHT: []
+DATASETS:
+  COMBINEALL: false
+  NAMES:
+  - MDMTREID
+  TESTS:
+  - MDMTREID
+INPUT:
+  AFFINE:
+    ENABLED: false
+  AUGMIX:
+    ENABLED: false
+    PROB: 0.0
+  AUTOAUG:
+    ENABLED: true
+    PROB: 0.1
+  CJ:
+    BRIGHTNESS: 0.15
+    CONTRAST: 0.15
+    ENABLED: false
+    HUE: 0.1
+    PROB: 0.5
+    SATURATION: 0.1
+  CROP:
+    ENABLED: false
+    RATIO:
+    - 0.75
+    - 1.3333333333333333
+    SCALE:
+    - 0.16
+    - 1
+    SIZE:
+    - 224
+    - 224
+  FLIP:
+    ENABLED: true
+    PROB: 0.5
+  PADDING:
+    ENABLED: true
+    MODE: constant
+    SIZE: 10
+  REA:
+    ENABLED: true
+    PROB: 0.5
+    VALUE:
+    - 123.675
+    - 116.28
+    - 103.53
+  RPT:
+    ENABLED: false
+    PROB: 0.5
+  SIZE_TEST:
+  - 384
+  - 128
+  SIZE_TRAIN:
+  - 384
+  - 128
+KD:
+  EMA:
+    ENABLED: false
+    MOMENTUM: 0.999
+  MODEL_CONFIG: []
+  MODEL_WEIGHTS: []
+MODEL:
+  BACKBONE:
+    ATT_DROP_RATE: 0.0
+    DEPTH: 50x
+    DROP_PATH_RATIO: 0.1
+    DROP_RATIO: 0.0
+    FEAT_DIM: 2048
+    LAST_STRIDE: 1
+    NAME: build_resnet_backbone
+    NORM: BN
+    PRETRAIN: true
+    PRETRAIN_PATH: ''
+    SIE_COE: 3.0
+    STRIDE_SIZE:
+    - 16
+    - 16
+    WITH_IBN: true
+    WITH_NL: true
+    WITH_SE: false
+  DEVICE: cuda
+  FREEZE_LAYERS:
+  - backbone
+  HEADS:
+    CLS_LAYER: CircleSoftmax
+    EMBEDDING_DIM: 0
+    MARGIN: 0.35
+    NAME: EmbeddingHead
+    NECK_FEAT: after
+    NORM: BN
+    NUM_CLASSES: 3789
+    POOL_LAYER: GeneralizedMeanPoolingP
+    SCALE: 64
+    WITH_BNNECK: true
+  LOSSES:
+    CE:
+      ALPHA: 0.2
+      EPSILON: 0.1
+      SCALE: 1.0
+    CIRCLE:
+      GAMMA: 128
+      MARGIN: 0.25
+      SCALE: 1.0
+    COSFACE:
+      GAMMA: 128
+      MARGIN: 0.25
+      SCALE: 1.0
+    FL:
+      ALPHA: 0.25
+      GAMMA: 2
+      SCALE: 1.0
+    NAME:
+    - CrossEntropyLoss
+    - TripletLoss
+    TRI:
+      HARD_MINING: true
+      MARGIN: 0.0
+      NORM_FEAT: false
+      SCALE: 1.0
+  META_ARCHITECTURE: Baseline
+  PIXEL_MEAN:
+  - 123.675
+  - 116.28
+  - 103.53
+  PIXEL_STD:
+  - 58.395
+  - 57.120000000000005
+  - 57.375
+  QUEUE_SIZE: 8192
+  WEIGHTS: /home/linkdata/data/tmm/fast-reid-master/logs/mdmtreid/sbs_R50-ibn-pre/model_final.pth
+OUTPUT_DIR: logs/mdmtreid/sbs_R50-ibn-pre
+SOLVER:
+  AMP:
+    ENABLED: true
+  BASE_LR: 0.00035
+  BIAS_LR_FACTOR: 1.0
+  CHECKPOINT_PERIOD: 20
+  CLIP_GRADIENTS:
+    CLIP_TYPE: norm
+    CLIP_VALUE: 5.0
+    ENABLED: false
+    NORM_TYPE: 2.0
+  DELAY_EPOCHS: 30
+  ETA_MIN_LR: 7.0e-07
+  FREEZE_ITERS: 1000
+  GAMMA: 0.1
+  HEADS_LR_FACTOR: 1.0
+  IMS_PER_BATCH: 64
+  MAX_EPOCH: 60
+  MOMENTUM: 0.9
+  NESTEROV: false
+  OPT: Adam
+  SCHED: CosineAnnealingLR
+  STEPS:
+  - 40
+  - 90
+  WARMUP_FACTOR: 0.1
+  WARMUP_ITERS: 2000
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0005
+  WEIGHT_DECAY_NORM: 0.0005
+TEST:
+  AQE:
+    ALPHA: 3.0
+    ENABLED: false
+    QE_K: 5
+    QE_TIME: 1
+  EVAL_PERIOD: 10
+  FLIP:
+    ENABLED: false
+  IMS_PER_BATCH: 128
+  METRIC: cosine
+  PRECISE_BN:
+    DATASET: Market1501
+    ENABLED: false
+    NUM_ITER: 300
+  RERANK:
+    ENABLED: false
+    K1: 20
+    K2: 6
+    LAMBDA: 0.3
+  ROC:
+    ENABLED: false
