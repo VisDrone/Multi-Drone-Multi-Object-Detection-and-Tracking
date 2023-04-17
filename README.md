@@ -30,5 +30,12 @@ MIA-Net (code)
 ## Citation 
 Please cite this paper if you want to use it in your work.
 
+@article{liu2023robust,  
+  title={Robust Multi-Drone Multi-Target Tracking to Resolve Target Occlusion: A Benchmark},  
+  author={Liu, Zhihao and Shang, Yuanyuan and Li, Timing and Chen, Guanlin and Wang, Yu and Hu, Qinghua and Zhu, Pengfei},  
+  journal={IEEE Transactions on Multimedia},  
+  year={2023},  
+  publisher={IEEE}  
+}
 
 
