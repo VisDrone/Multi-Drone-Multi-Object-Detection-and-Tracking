@@ -24,7 +24,7 @@ MDMT-FULL(25.8G): [Baidu Netdisk](https://pan.baidu.com/s/1Zkp9jrGSHxATFstUAkhs-
 
 ## Multi-matching Identity Authentication network (MIA-Net)
 
-MIA-Net (code)(https://github.com/Edision-liu/Multi-Drone-Multi-Object-Detection-and-Tracking)
+MIA-Net [code](https://github.com/Edision-liu/Multi-Drone-Multi-Object-Detection-and-Tracking)
 
 
 ## Citation 
