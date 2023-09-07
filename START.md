@@ -35,6 +35,9 @@ mmdet                          2.25.1)
 >>>> train/
 >>>> val/
 >>>> test/
+>>>>> sequences
+>>>>>> img1
+>>>>>>> ~.jpg
 ### Inference
 1.Inference MIA-Net:
 
