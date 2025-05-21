@@ -1,4 +1,0 @@
-include requirements/*.txt
-include mmtrack/.mim/model-index.yml
-recursive-include mmtrack/.mim/configs *.py *.yml
-recursive-include mmtrack/.mim/tools *.sh *.py
