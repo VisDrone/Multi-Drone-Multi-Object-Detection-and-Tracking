@@ -1,3 +1,0 @@
-cython
-numba==0.53.0
-numpy
